@@ -1,0 +1,498 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
+}
+
+nav {
+    background-color: #ffffff;
+    padding: 10px 30px;
+}
+
+.navTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: rgb(241, 235, 235);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.searchInput {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: rgb(91, 90, 90);
+    font-size: 1rem;
+}
+
+.searchInput::placeholder {
+    color: rgb(172, 172, 172);
+}
+
+.searchIcon {
+    position: absolute;
+    cursor: pointer;
+    transition: 0.2s all ease;
+    right: 15px;
+}
+
+.searchIcon:hover {
+    height: 22px;
+    width: 22px;
+}
+
+.profile {
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+    position: relative;
+}
+
+.itemNumber {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background-color: red;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    width: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.user {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.navBottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.menuItem:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.menuItem>a {
+    text-decoration: none;
+    color: rgb(77, 76, 76);
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+}
+
+.arrow {
+    position: absolute;
+    height: 50px;
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+.arrow:hover {
+    opacity: 0.8;
+}
+
+.left {
+    left: 5px;
+    transform: rotate(180deg);
+}
+
+.right {
+    right: 5px;
+}
+
+.frame {
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: all 1s ease;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bottom {
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid rgb(170, 169, 169);
+    cursor: pointer;
+}
+
+/* cart section */
+
+.cart {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 400px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    background-color: rgb(198, 198, 198);
+    box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+    z-index: 100;
+    transition: 0.5s all ease-in-out;
+}
+
+.cart-active {
+    right: 0;
+    transition: 0.5s all ease-in-out;
+}
+
+.cart-remove{
+    transition: 0.5s all ease-in-out;
+}
+
+.cart-title {
+    text-align: center;
+    color: rgb(243, 243, 243);
+    font-size: 1.7rem;
+    font-weight: 900;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cart-box {
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+}
+
+.cart-img {
+    width: 75px;
+    height: 90px;
+    object-fit: cover;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 5px;
+}
+
+.detail-box {
+    display: grid;
+    row-gap: 0.5rem;
+}
+
+.price-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-book-title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: gray;
+    font-weight: 500;
+}
+
+.cart-price {
+    font-weight: 500;
+}
+
+.cart-quantity {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    outline: none;
+    width: 2.4rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.cart-remove {
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+.total-title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.total-price {
+    margin-left: 0.5rem;
+}
+
+.btn-buy {
+    padding: 12px 20px;
+    background-color: #2f3542;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-buy:active{
+    background-color: #1d2129;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#cart-close {
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.sales {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 2rem;
+    padding: 10px;
+}
+
+.books {
+    display: flex;
+    gap: 50px;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.book-img {
+    height: 250px;
+    width: 170px;
+    transition: 0.8s all ease;
+}
+
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.book-img:hover {
+    opacity: 0.3;
+}
+
+.add {
+    position: absolute;
+    right: 25%;
+    top: 40%;
+    height: 40px;
+    width: 100px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgb(5, 193, 5);
+    opacity: 0;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    transition: opacity 0.8s ease;
+}
+
+.add:hover {
+    background-color: rgb(5, 139, 5);
+}
+
+.active {
+    opacity: 1;
+}
+
+.price {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.book-title {
+    margin: 5px 0;
+    font-weight: 400;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.to-top {
+    background-color: rgb(112, 112, 112);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.footer-container>a {
+    text-decoration: none;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(42, 42, 42);
+    color: white;
+    padding: 50px;
+    border-bottom: 1px solid gray;
+}
+
+.footer-title {
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.footer-content {
+    font-weight: 100;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.footer-middle {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(42, 42, 42);
+    padding: 20px;
+    color: #ffffff;
+}
+
+.footer-middle-item {
+    display: flex;
+    gap: 30px;
+}
+
+.country {
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgb(25, 25, 25);
+}
+
+/* Order payment */
+
+.orderplaced{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 30%;
+    height: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #f0efef;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    padding: 10px;
+    border-radius: 5px;
+    visibility: hidden;
+}
+
+.payment{
+    color: green;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.thanks{
+    color: red;
+    font-size: 2rem;
+}
+
+.shop{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.close{
+    position: absolute;
+    bottom: 15px;
+    border: none;
+    font-size: 1rem;
+    color: white;
+    background-color: green;
+    border-radius: 3px;
+    padding: 3px;
+    width: 60px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.close:hover{
+    color: green;
+    background-color: white;
+    border: 1px solid green;
+}
